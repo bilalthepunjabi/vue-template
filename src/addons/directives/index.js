@@ -4,7 +4,7 @@ import registery from "./register";
 export default {
   install: (app, options) => {
     for (const iterator of registery) {
-      app.component(iterator.name, iterator);
+      app.directive(iterator.name, iterator.directive);
     }
   }
 };
