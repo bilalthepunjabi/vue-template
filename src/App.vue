@@ -1,5 +1,5 @@
 <template>
-  <div></div>
+  <div>{{ initials("sds df") }}This app is working fine</div>
 </template>
 <script>
 export default {
