@@ -1,4 +1,4 @@
-//global file for registering of any components
+//load all components that is being registered
 import registery from "./register";
 
 export default {

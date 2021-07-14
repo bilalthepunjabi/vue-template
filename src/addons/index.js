@@ -1,8 +1,10 @@
 import plugins from "./plugins/index";
 import components from "./components/index";
 import directives from "./directives/index";
+import filters from "./filters/index";
+import providers from "./providers/index";
 
-const installer = [directives, plugins, components];
+const installer = [directives, filters, plugins, components, providers];
 
 export default {
   install: (app, options) => {

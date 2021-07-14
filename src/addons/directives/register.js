@@ -1,3 +1,5 @@
+//global file for registering of any directives
+
 import beforeCreate from "./lifecycle/beforeCreate";
 import created from "./lifecycle/created";
 import beforeMount from "./lifecycle/beforeMount";
@@ -9,12 +11,12 @@ import unmounted from "./lifecycle/unmounted";
 
 export default [
   //register directives you want to use globally
-  { name: "beforeCreateHook", directive: beforeCreate },
-  { name: "createdHook", directive: created },
-  { name: "beforeMountHook", directive: beforeMount },
-  { name: "mountedHook", directive: mounted },
-  { name: "beforeUpdateHook", directive: beforeUpdate },
-  { name: "updatedHook", directive: updated },
-  { name: "beforeUnmountHook", directive: beforeUnmount },
-  { name: "unmountedHook", directive: unmounted }
+  { name: "beforeCreate", directive: beforeCreate },
+  { name: "created", directive: created },
+  { name: "beforeMount", directive: beforeMount },
+  { name: "mounted", directive: mounted },
+  { name: "beforeUpdate", directive: beforeUpdate },
+  { name: "updated", directive: updated },
+  { name: "beforeUnmount", directive: beforeUnmount },
+  { name: "unmounted", directive: unmounted }
 ];

@@ -1,3 +1,4 @@
+//global file for registering of any components
 import svg_icon from "./svg-icon/SvgIcon.vue";
 
 export default [

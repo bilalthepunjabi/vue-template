@@ -1,4 +1,4 @@
-//global file for registering of any plugins
+//load all plugins that is being registered
 import registery from "./register";
 
 export default {
