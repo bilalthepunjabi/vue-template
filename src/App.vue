@@ -67,7 +67,7 @@
                   <h1 class="mt-4 text-4xl tracking-tight font-extrabold text-white sm:mt-5 sm:text-6xl lg:mt-6 xl:text-6xl">
                     <span class="block">A better way to</span>
                     <span class="block text-indigo-400">develop web apps</span>
-                    <span class="block">fast</span>
+                    <span class="block">fast & efficient</span>
                   </h1>
                   <p class="mt-3 text-base text-gray-300 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
                     This branch [tailwind] of <a href="https://github.com/bilalthepunjabi/vue-template">https://github.com/bilalthepunjabi/vue-template.git</a> includes built-in { @tailwindcss / @headless-ui }.
