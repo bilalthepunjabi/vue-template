@@ -1,8 +1,8 @@
 <template>
-  <div class="min-h-screen bg-gray-900">
+  <div class="min-h-screen bg-white dark:bg-gray-900">
     <div class="relative overflow-hidden">
       <Popover as="header" class="relative">
-        <div class="bg-gray-900 pt-6">
+        <div class="dark:bg-gray-900 bg-white pt-6">
           <nav class="relative max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6" aria-label="Global">
             <div class="flex items-center flex-1">
               <div class="flex items-center justify-between w-full md:w-auto">
@@ -10,7 +10,7 @@
                   <span class="sr-only">VueTailwindUI</span>
                 </a>
                 <div class="-mr-2 flex items-center md:hidden">
-                  <PopoverButton class="bg-gray-900 rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:bg-gray-800 focus:outline-none focus:ring-2 focus-ring-inset focus:ring-white">
+                  <PopoverButton class="dark:bg-gray-900 bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:bg-gray-800 focus:outline-none focus:ring-2 focus-ring-inset focus:ring-white">
                     <span class="sr-only">Open main menu</span>
                     <MenuIcon class="h-6 w-6" aria-hidden="true" />
                   </PopoverButton>
@@ -54,30 +54,28 @@
       </Popover>
 
       <main>
-        <div class="pt-10 bg-gray-900 sm:pt-16 lg:pt-8 lg:pb-14 lg:overflow-hidden">
+        <div class="pt-10 dark:bg-gray-900 bg-white sm:pt-16 lg:pt-8 lg:pb-14 lg:overflow-hidden">
           <div class="mx-auto max-w-7xl lg:px-8">
             <div class="lg:grid lg:grid-cols-2 lg:gap-8">
               <div class="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 sm:text-center lg:px-0 lg:text-left lg:flex lg:items-center">
                 <div class="lg:py-24">
-                  <a href="#" class="inline-flex items-center text-white bg-black rounded-full p-1 pr-2 sm:text-base lg:text-sm xl:text-base hover:text-gray-200">
-                    <span class="px-3 py-0.5 text-white text-xs font-semibold leading-5 uppercase tracking-wide bg-indigo-500 rounded-full">VUE 3</span>
-                    <span class="ml-4 text-sm">TAILWIND - UI</span>
-                    <ChevronRightIcon class="ml-2 w-5 h-5 text-gray-500" aria-hidden="true" />
+                  <a href="#" class="inline-flex items-center text-white bg-black rounded-full p-1 sm:text-base lg:text-sm xl:text-base hover:text-gray-200">
+                    <span :class="'px-4 ' + (theme === 'sun' ? 'text-white text-xs font-semibold leading-5 uppercase tracking-wide rounded-full bg-yellow-600' : '')"><SunIcon class="w-5" @click="sun()"/></span>
+                    <span :class="''+ (theme === 'moon' ? ' text-black text-xs font-semibold leading-5 uppercase tracking-wide rounded-full bg-white' : '')"><MoonIcon class="w-5" @click="moon()"/></span>
                   </a>
-                  <h1 class="mt-4 text-4xl tracking-tight font-extrabold text-white sm:mt-5 sm:text-6xl lg:mt-6 xl:text-6xl">
+                  <h1 class="mt-4 text-4xl tracking-tight font-extrabold dark:text-white text-black sm:mt-5 sm:text-6xl lg:mt-6 xl:text-6xl">
                     <span class="block">A better way to</span>
-                    <span class="block text-indigo-400">develop web apps</span>
+                    <span class="block text-indigo-600">develop web apps</span>
                     <span class="block">fast & efficient</span>
                   </h1>
-                  <p class="mt-3 text-base text-gray-300 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
+                  <p class="mt-3 text-base dark:text-gray-300 text-gray-800 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
                     This branch [tailwind] of <a href="https://github.com/bilalthepunjabi/vue-template">https://github.com/bilalthepunjabi/vue-template.git</a> includes built-in { @tailwindcss / @headless-ui }.
                   </p>
                 </div>
               </div>
-              <div class="mt-12 -mb-16 sm:-mb-48 lg:m-0 lg:relative">
-                <div class="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 lg:max-w-none lg:px-0">
-                  <!-- Illustration taken from Lucid Illustrations: https://lucid.pixsellz.io/ -->
-                  <img class="w-full lg:absolute lg:inset-y-0 lg:left-0 lg:h-full lg:w-auto lg:max-w-none" src="https://tailwindui.com/img/component-images/cloud-illustration-indigo-400.svg" alt="" />
+              <div class="mt-12 lg:relative">
+                <div class="mx-auto">
+                  <CubeTransparentIcon class="ml-2 text-indigo-600 dark:text-white" aria-hidden="true"/>
                 </div>
               </div>
             </div>
@@ -86,13 +84,13 @@
         <!-- More main page content here... -->
       </main>
     </div>
+    <app-footer/>
   </div>
 </template>
 
 <script>
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/vue'
-import { MenuIcon, XIcon } from '@heroicons/vue/outline'
-import { ChevronRightIcon } from '@heroicons/vue/solid'
+import { MenuIcon, XIcon,CubeTransparentIcon,SunIcon,MoonIcon } from '@heroicons/vue/outline'
 
 const navigation = []
 
@@ -101,9 +99,26 @@ export default {
     Popover,
     PopoverButton,
     PopoverPanel,
-    ChevronRightIcon,
     MenuIcon,
     XIcon,
+    CubeTransparentIcon,
+    SunIcon,
+    MoonIcon
+  },
+  data(){
+    return {
+      theme : 'sun'
+    }
+  },
+  methods: {
+    sun(){
+      this.theme = 'sun'
+      document.getElementById('app').classList.remove('dark');
+    },
+    moon(){
+      this.theme = 'moon'
+      document.getElementById('app').classList.add('dark');
+    }
   },
   setup() {
     return {
