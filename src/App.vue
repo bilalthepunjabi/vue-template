@@ -111,7 +111,10 @@ export default {
     }
   },
   mounted(){
-    console.warn(this.$store.default_store.hasModule('api'))
+    // console.warn(this.$store.default_store.hasModule('api'))
+    this.$store.main.dispatch('api/authin',{email:"bilal_punjabi@hotmail.com",password:"123456789"}).then((res)=>{
+      console.log(res);
+    })
   },
   methods: { 
     sun(){

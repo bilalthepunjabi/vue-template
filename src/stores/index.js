@@ -1,6 +1,5 @@
 import VueAxios from 'vue-axios';
 import axios from 'axios';
-import { createStore } from "vuex";
 
 import registery from "./register";
 
