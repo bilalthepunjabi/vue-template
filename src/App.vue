@@ -54,10 +54,12 @@
       </Popover>
 
       <main>
+        <h1 class="mx-auto text-center dark:text-white text-indigo-600 font-mono text-4xl xl:text-6xl">Vue { 3 } Boilerplate </h1>
         <div class="pt-10 dark:bg-gray-900 bg-white sm:pt-16 lg:pt-8 lg:pb-14 lg:overflow-hidden">
           <div class="mx-auto max-w-7xl lg:px-8">
             <div class="lg:grid lg:grid-cols-2 lg:gap-8">
               <div class="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 sm:text-center lg:px-0 lg:text-left lg:flex lg:items-center">
+                
                 <div class="lg:py-24">
                   <a href="#" class="inline-flex items-center text-white bg-black rounded-full p-1 sm:text-base lg:text-sm xl:text-base hover:text-gray-200">
                     <span :class="'px-4 ' + (theme === 'sun' ? 'text-white text-xs font-semibold leading-5 uppercase tracking-wide rounded-full bg-yellow-600' : '')"><SunIcon class="w-5" @click="sun()"/></span>
@@ -75,7 +77,6 @@
               </div>
               <div class="mt-12 lg:relative">
                 <div class="mx-auto">
-                  <CubeTransparentIcon class="ml-2 text-indigo-600 dark:text-white" aria-hidden="true"/>
                 </div>
               </div>
             </div>
@@ -90,7 +91,7 @@
 
 <script>
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/vue'
-import { MenuIcon, XIcon,CubeTransparentIcon,SunIcon,MoonIcon } from '@heroicons/vue/outline'
+import { MenuIcon, XIcon,SunIcon,MoonIcon } from '@heroicons/vue/outline'
 
 const navigation = []
 
@@ -101,7 +102,6 @@ export default {
     PopoverPanel,
     MenuIcon,
     XIcon,
-    CubeTransparentIcon,
     SunIcon,
     MoonIcon
   },
