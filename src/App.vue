@@ -111,11 +111,9 @@ export default {
     }
   },
   mounted(){
-    this.$store.dispatch('api/authin',{email:"bilal_punjabi@hotmail.com",password:"123456789"}).then((response)=>{
-      console.log(response);
-    })
+    console.warn(this.$store.default_store.hasModule('api'))
   },
-  methods: {
+  methods: { 
     sun(){
       this.theme = 'sun'
       document.getElementById('app').classList.remove('dark');
