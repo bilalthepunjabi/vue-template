@@ -110,6 +110,11 @@ export default {
       theme : 'sun'
     }
   },
+  mounted(){
+    this.$store.dispatch('api/authin',{email:"bilal_punjabi@hotmail.com",password:"123456789"}).then((response)=>{
+      console.log(response);
+    })
+  },
   methods: {
     sun(){
       this.theme = 'sun'
