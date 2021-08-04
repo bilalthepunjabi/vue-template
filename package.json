@@ -2,7 +2,9 @@
   "name": "vue-template",
   "version": "0.1.0",
   "private": true,
+  "main": "electron.js",
   "scripts": {
+    "electron": "vue-cli-service build && electron .",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
@@ -27,13 +29,15 @@
     "vuex": "4.0.2"
   },
   "devDependencies": {
-    "@tailwindcss/postcss7-compat": "^2.2.7",
+    "@tailwindcss/postcss7-compat": "^2.2.5",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
     "@vue/compiler-sfc": "^3.0.0",
     "autoprefixer": "9",
     "babel-eslint": "^10.1.0",
+    "electron": "^13.1.8",
+    "electron-builder": "^22.11.7",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^7.0.0",
     "postcss": "7",
