@@ -1,4 +1,5 @@
 import { createRouter } from "vue-router";
+// import { createRouter } from '@ionic/vue-router';
 import registery from "./register";
 import config from "./config";
 

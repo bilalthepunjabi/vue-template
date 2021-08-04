@@ -1,4 +1,5 @@
 import { createWebHistory } from "vue-router";
+//import { createWebHistory } from '@ionic/vue-router';
 
 const config = {
   history: createWebHistory(),
