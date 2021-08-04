@@ -7,7 +7,8 @@
     "electron": "vue-cli-service build && electron .",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "dist": "electron-builder"
   },
   "dependencies": {
     "@capacitor/android": "^3.1.2",
@@ -63,5 +64,11 @@
     "not dead"
   ],
   "keywords": [],
-  "description": ""
+  "description": "",
+  "build": {
+    "appId": "vue-template.electron",
+    "mac": {
+      "category": "public.app-category.developer-tools"
+    }
+  }
 }
